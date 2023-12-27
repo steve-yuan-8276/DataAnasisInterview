@@ -26,3 +26,6 @@ This repo is mainly used to organize various common questions and answers encoun
 ## PYTHON
 
 ## TABLEAU
+1.[Join, Blend and Relationship](https://github.com/steve-yuan-8276/DataAnasisInterview/blob/main/Tableau/join_blend_relationship.md)
+
+2.[What is a parameter in tableau](https://github.com/steve-yuan-8276/DataAnasisInterview/blob/main/Tableau/parameter%20in%20tableau.md)
