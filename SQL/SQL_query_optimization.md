@@ -32,8 +32,9 @@ The basic structure of MySQL queries includes several components:
 2. **Poorly Designed Queries:**
    - Solution:
      - Optimize query statements, avoiding the use of SELECT * and selecting only necessary fields.
-     - Use JOIN judiciously to avoid Cartesian products.
-     - Minimize the use of subqueries.
+     - Use cross JOIN judiciously to avoid Cartesian products.
+     - Avoid using JOIN to associate too many tables, it is recommended not to exceed 5.
+     - Minimize the use of subqueries.Typically, subqueries can be transformed into JOIN queries for optimization when they are used within an IN clause and the subquery consists of simple SQL (not including UNION, GROUP BY, ORDER BY, or LIMIT clauses).
      - Excessive use of 'or' keywords in the WHERE clause may lead to MySQL optimizer incorrectly choosing full table scans. Using the UNION clause can speed up queries, especially when different indexes optimize one query and different indexes optimize another query.
      - Avoid using leading wildcards in Like expressions to prevent MySQL from performing full table scans, resulting in extremely slow queries.
 
@@ -85,7 +86,7 @@ MySQL 查询的基本结构包括以下几个组件：
     解决方法：
     - 优化查询语句，避免使用SELECT *，只选择需要的字段；
     - 合理使用JOIN，避免笛卡尔积；
-    - 尽量减少子查询的使用。
+    - 尽量减少子查询的使用,通常子查询在 in 子句中，且子查询中为简单 SQL(不包含 union、group by、order by、limit 从句) 时,才可以把子查询转化为关联查询进行优化。
     - 当在where子句中过多使用'or'关键字时，可能会使MySQL优化器错误地选择对记录进行全表扫描。使用Union子句可以加快查询速度，尤其是在有助于优化一个查询的索引和有助于优化另一个查询的不同索引的情况下。
     - 避免在Like表达式中使用前导通配符，以免导致MySQL执行全表扫描，从而使查询变得极其缓慢。
 
