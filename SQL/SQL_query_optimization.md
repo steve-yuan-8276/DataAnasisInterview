@@ -32,7 +32,7 @@ The basic structure of MySQL queries includes several components:
 2. **Poorly Designed Queries:**
    - Solution:
      - Optimize query statements, avoiding the use of SELECT * and selecting only necessary fields.
-     - Use cross JOIN judiciously to avoid Cartesian products.
+     - use JOIN judiciously to avoid Cartesian products.
      - Avoid using JOIN to associate too many tables, it is recommended not to exceed 5.
      - Minimize the use of subqueries.Typically, subqueries can be transformed into JOIN queries for optimization when they are used within an IN clause and the subquery consists of simple SQL (not including UNION, GROUP BY, ORDER BY, or LIMIT clauses).
      - Excessive use of 'or' keywords in the WHERE clause may lead to MySQL optimizer incorrectly choosing full table scans. Using the UNION clause can speed up queries, especially when different indexes optimize one query and different indexes optimize another query.

@@ -25,6 +25,7 @@ UPDATE <table_name> SET <column_name=value> WHERE <filter_condition>;
 ```
 - Select:
 
-4 ```sql
+```sql
 
 SELECT * FROM <table_name> WHERE <filter_condition>;
+```
